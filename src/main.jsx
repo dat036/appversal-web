@@ -10,7 +10,7 @@ createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/theappversal/policy" element={<PolicyPage />} />
+        <Route path="/policy" element={<PolicyPage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
