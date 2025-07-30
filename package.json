@@ -2,10 +2,13 @@
   "name": "the-appversal-landing",
   "version": "1.0.0",
   "type": "module",
+  "homepage": "https://dat036.github.io/appversal-web",
   "scripts": {
     "dev": "vite",
-    "build": "chmod +x node_modules/.bin/vite && vite build",
-    "preview": "vite preview"
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -15,6 +18,7 @@
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.0",
     "autoprefixer": "^10.4.14",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.3.2",
     "vite": "^7.0.4"
