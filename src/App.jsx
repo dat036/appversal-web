@@ -14,7 +14,18 @@ export default function App() {
       <section className="py-24 px-6 text-center bg-gradient-to-br from-black via-gray-900 to-black">
         <h2 className="text-5xl font-extrabold text-cyan-400 mb-4">Smart Tools. Smarter Life.</h2>
         <p className="text-lg text-gray-300 mb-6">Explore our universe of creative and productivity apps for Android & iOS</p>
-        <button className="bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-3 px-6 rounded-full">Explore The Store</button>
+        <button
+          onClick={() => window.location.href = 'https://play.google.com/store/apps/developer?id=The+Appversal'}
+          className="bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-3 px-6 rounded-full" >
+          Explore The Store
+      </button>
+      </section>
+
+         <section id="about" className="py-16 px-6 bg-gray-950 text-center">
+        <h3 className="text-3xl font-bold text-cyan-400 mb-4">Why The Appversal?</h3>
+        <p className="text-gray-300 max-w-2xl mx-auto">
+          Our mission is to simplify creativity and productivity using cutting-edge technology. We build tools that empower users, from casual creators to power users.
+        </p>
       </section>
 
       <section id="apps" className="py-16 px-6">
@@ -22,60 +33,31 @@ export default function App() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                name: 'Piano Mastery',
+                name: 'Pocket Piano',
                 desc: 'Learn, play & enjoy music with interactive falling notes.',
                 icon: '🎹',
-                img: '/images/piano.jpg',
+                img: '/images/piano.webp',
                 android: true,
-                ios: true
+                ios: false,
+                url: 'https://play.google.com/store/apps/details?id=com.learnpiano.playpiano'
               },
               {
-                name: 'PDF Toolkit',
+                name: 'PDF Hub',
                 desc: 'View, convert, merge – All-in-one PDF solution.',
                 icon: '📄',
-                img: '/images/pdf.jpg',
+                img: '/images/pdf.webp',
                 android: true,
-                ios: true
+                ios: false,
+                url: 'https://play.google.com/store/apps/details?id=appversal.pdfhub.pdfviewer.pdfreader'
               },
               {
-                name: 'AR Draw Sketch',
+                name: 'AR Draw Sketch Anime',
                 desc: 'Draw anything with AR on real surfaces.',
                 icon: '🖍️',
-                img: '/images/ar.jpg',
+                img: '/images/ar_draw.webp',
                 android: true,
-                ios: false
-              },
-              {
-                name: 'QR Expert',
-                desc: 'Scan, generate, and enhance QR codes with AI.',
-                icon: '🔍',
-                img: '/images/qr.jpg',
-                android: true,
-                ios: true
-              },
-              {
-                name: 'QR Expert',
-                desc: 'Scan, generate, and enhance QR codes with AI.',
-                icon: '🔍',
-                img: '/images/qr.jpg',
-                android: true,
-                ios: true
-              },
-              {
-                name: 'QR Expert',
-                desc: 'Scan, generate, and enhance QR codes with AI.',
-                icon: '🔍',
-                img: '/images/qr.jpg',
-                android: true,
-                ios: true
-              },
-              {
-                name: 'QR Expert',
-                desc: 'Scan, generate, and enhance QR codes with AI.',
-                icon: '🔍',
-                img: '/images/qr.jpg',
-                android: true,
-                ios: true
+                ios: false,
+                url: 'https://play.google.com/store/apps/details?id=com.appversal.app.draw.ar.sketch.trace.paint'
               }
             ].map(app => (
               <div key={app.name} className="bg-gray-900 p-6 rounded-2xl shadow-lg hover:shadow-cyan-500/20 transition">
@@ -93,7 +75,9 @@ export default function App() {
   <p className="text-gray-400 mb-4">{app.desc}</p>
   <div className="space-x-2">
     {app.android && (
-      <button className="inline-flex items-center bg-cyan-500 text-black px-4 py-2 rounded-full text-sm hover:bg-cyan-600">
+      <button 
+        onClick={() => window.open(app.url, '_blank')}
+      className="inline-flex items-center bg-cyan-500 text-black px-4 py-2 rounded-full text-sm hover:bg-cyan-600">
         <span className="mr-2">🤖</span> Android
       </button>
     )}
@@ -109,29 +93,16 @@ export default function App() {
             ))}
           </div>
       </section>
-
-      <section id="about" className="py-16 px-6 bg-gray-950 text-center">
-        <h3 className="text-3xl font-bold text-cyan-400 mb-4">Why The Appversal?</h3>
-        <p className="text-gray-300 max-w-2xl mx-auto">
-          Our mission is to simplify creativity and productivity using cutting-edge technology. We build tools that empower users, from casual creators to power users.
-        </p>
-      </section>
-
-      <section id="contact" className="py-16 px-6 text-center">
-        <h3 className="text-3xl font-bold text-white mb-4">Let’s Connect</h3>
-        <p className="text-gray-400 mb-6">Got feedback or business inquiries? Reach out to us.</p>
-        <a href="mailto:contact@appversal.com" className="text-cyan-400 underline">contact@appversal.com</a>
-      </section>
-
+  
             {/* User Feedback Section (like Google Play style) */}
       <section className="py-16 px-6 bg-gray-950" id="feedback">
         <h3 className="text-3xl font-bold text-cyan-400 text-center mb-10">What Users Say</h3>
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
           {[
-            { name: 'Alice Nguyen', app: 'Piano Mastery', rating: 5, feedback: 'Ứng dụng piano tuyệt vời nhất mình từng dùng! Âm thanh và giao diện đều rất chất lượng.' },
-            { name: 'Minh Tran', app: 'PDF Toolkit', rating: 4, feedback: 'PDF Toolkit giúp mình xử lý tài liệu cực nhanh, rất đáng giá.' },
-            { name: 'Linh Le', app: 'AR Draw Sketch', rating: 5, feedback: 'Vẽ trên tường bằng AR rất vui và sáng tạo, mong có thêm tính năng mới!' },
-            { name: 'Hoang Pham', app: 'QR Expert', rating: 4, feedback: 'QR Expert dễ dùng và nhanh chóng, rất tiện cho công việc hàng ngày.' }
+            { name: 'Alice Nguyen', app: 'Pocket Piano', rating: 5, feedback: 'Ứng dụng piano tuyệt vời nhất mình từng dùng! Âm thanh và giao diện đều rất chất lượng.' },
+            { name: 'Minh Tran', app: 'PDF Hub', rating: 4, feedback: 'PDF Toolkit giúp mình xử lý tài liệu cực nhanh, rất đáng giá.' },
+            { name: 'Linh Le', app: 'AR Draw Sketch Anime', rating: 5, feedback: 'Vẽ trên tường bằng AR rất vui và sáng tạo, mong có thêm tính năng mới!' },
+            { name: 'Hoang Pham', app: 'Pocket Piano', rating: 4, feedback: 'Ứng dụng tuyệt vời giúp tôi trải nghiệm các loại nhạc cụ piano, guitar, saxophone.' }
           ].map((f, i) => (
             <div key={i} className="bg-gray-900 rounded-xl p-6 shadow-md">
               <div className="flex items-center justify-between mb-2">
@@ -161,33 +132,35 @@ export default function App() {
         <div className="mt-8 text-gray-400 text-sm">
           Or reach us via:
           <div className="flex justify-center space-x-6 mt-4 text-xl">
-            <a href="https://play.google.com/store/apps/dev?id=your_dev_id" target="_blank" className="hover:text-cyan-300 flex items-center space-x-2">
-              <img src="/icons/playstore.svg" alt="Play Store" className="w-5 h-5" />
+            <a href="https://play.google.com/store/apps/developer?id=The+Appversal" target="_blank" className="hover:text-cyan-300 flex items-center space-x-2">
+              <img src="/logo/google.png" alt="Play Store" className="w-5 h-5" />
               <span>Google Play</span>
             </a>
-            <a href="https://www.youtube.com/@your_channel" target="_blank" className="hover:text-cyan-300 flex items-center space-x-2">
-              <img src="/icons/youtube.svg" alt="YouTube" className="w-5 h-5" />
-              <span>YouTube</span>
-            </a>
-            <a href="https://facebook.com/yourpage" target="_blank" className="hover:text-cyan-300 flex items-center space-x-2">
-              <img src="/icons/facebook.svg" alt="Facebook" className="w-5 h-5" />
+            <a href="https://www.facebook.com/people/The-Appversal-App/61573405749119/" target="_blank" className="hover:text-cyan-300 flex items-center space-x-2">
+              <img src="/logo/meta.png" alt="Facebook" className="w-5 h-5" />
               <span>Facebook</span>
             </a>
           </div>
         </div>
       </section>
-
-      {/* Partner Section */}
+{/* 
+      Partner Section
       <section className="py-16 px-6 text-center bg-gray-950" id="partners">
-        <h3 className="text-3xl font-bold text-cyan-400 mb-10">Our Partners</h3>
+        <h3 className="text-3xl font-bold text-cyan-400 mb-10">Our Partners</h3>  
         <div className="flex justify-center flex-wrap gap-10 items-center max-w-4xl mx-auto">
-          <img src="/logos/admob.png" alt="AdMob" className="h-12" />
-          <img src="/logos/ironsource.png" alt="IronSource" className="h-12" />
-          <img src="/logos/pangle.png" alt="Pangle" className="h-12" />
-          <img src="/logos/appsflyer.png" alt="Appsflyer" className="h-12" />
+          <img src="/logo/admob.png" alt="AdMob" className="h-12" />
+          <img src="/logo/ironSource.webp" alt="IronSource" className="h-12" />
+          <img src="/logo/pangle.svg" alt="Pangle" className="h-12" />
+          <img src="/logo/appflyer.png" alt="Appsflyer" className="h-12" />
         </div>
-      </section>
+      </section> */}
 
+  <section id="contact" className="py-16 px-6 text-center">
+        <h3 className="text-3xl font-bold text-white mb-4">Let’s Connect</h3>
+        <p className="text-gray-400 mb-6">Got feedback or business inquiries? Reach out to us.</p>
+        <a href="mailto:theappversal@gmail.com" className="text-cyan-400 underline">contact@appversal.com</a>
+      </section>
+      
       <footer className="py-6 text-center text-gray-600 text-sm border-t border-gray-800">
         © 2025 The Appversal. All rights reserved.
       </footer>
