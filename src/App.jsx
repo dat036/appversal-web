@@ -7,7 +7,7 @@ export default function App() {
           <a href="#apps" className="hover:text-cyan-300">Apps</a>
           <a href="#about" className="hover:text-cyan-300">About</a>
           <a href="#contact" className="hover:text-cyan-300">Contact</a>
-          <a href="/theappversal/policy" className="hover:text-cyan-300">Policy</a>
+          <a href="/policy" className="hover:text-cyan-300">Policy</a>
         </nav>
       </header>
 
