@@ -158,7 +158,9 @@ export default function App() {
   <section id="contact" className="py-16 px-6 text-center">
         <h3 className="text-3xl font-bold text-white mb-4">Let’s Connect</h3>
         <p className="text-gray-400 mb-6">Got feedback or business inquiries? Reach out to us.</p>
-        <a href="mailto:theappversal@gmail.com" className="text-cyan-400 underline">contact@appversal.com</a>
+        <p className="text-gray-400 mb-6">Company Name:  Appmate Technology Limited</p>
+        <p className="text-gray-400 mb-6">Register Office:  Room 409, Beverley Commercial Centre, 87-105 Chatham Road South, Tsim Sha Tsui, Kowloon, HK</p>
+        <a href="mailto:theappversal@gmail.com" className="text-cyan-400 underline">theappversal@gmail.com</a>
       </section>
       
       <footer className="py-6 text-center text-gray-600 text-sm border-t border-gray-800">
